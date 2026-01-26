@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "invoice_number",
+      "type": "regex",
+      "pattern": "Invoice\\s*No\\.\\s*([A-Z0-9-]+)",
+      "postprocess": ["strip"]
+    },
+    {
+      "name": "total_amount",
+      "type": "keyword_window",
+      "keywords": ["Total", "합계"],
+      "window": 40,
+      "pattern": "([0-9,]+\\.?[0-9]{0,2})",
+      "postprocess": ["remove_commas", "strip"]
+    },
+    {
+      "name": "issue_date",
+      "type": "regex",
+      "pattern": "(\\d{4}[.-/]\\d{1,2}[.-/]\\d{1,2})",
+      "postprocess": ["date_yyyymmdd"]
+    },
+    {
+      "name": "item_total",
+      "type": "table",
+      "table": {
+        "header_match": "Amount",
+        "column_index": 3,
+        "row_index": -1
+      },
+      "postprocess": ["remove_commas", "strip"]
+    }
+  ]
+}
