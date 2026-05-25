@@ -1,0 +1,27 @@
+risk:
+  exclude:
+    suspended: true
+    managed: true
+    investment_warning: true
+    investment_caution: true
+    investment_risk: true
+    etf: true
+    spac: true
+    preferred: true
+
+  liquidity:
+    min_avg_trading_value_20d: 5000000000
+
+  portfolio:
+    max_weight_per_stock: 0.10
+    max_positions: 10
+    min_cash_weight: 0.10
+
+  execution_safety:
+    max_new_buy_amount_per_day: 5000000
+    max_orders_per_day: 20
+    stop_ordering_on_api_error: true
+    prevent_duplicate_orders: true
+    recheck_unfilled_orders: true
+    pre_order_price_spike_check: true
+    max_intraday_price_change_abs: 0.10

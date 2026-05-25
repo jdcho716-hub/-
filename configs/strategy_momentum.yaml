@@ -1,0 +1,33 @@
+strategy:
+  name: value_trading_value_momentum
+  rebalance: weekly_monday
+  max_positions: 10
+  min_cash_weight: 0.10
+  max_weight_per_stock: 0.10
+
+universe:
+  markets: [KOSPI, KOSDAQ]
+  exclude_etf: true
+  exclude_spac: true
+  exclude_preferred: true
+  exclude_suspended: true
+  exclude_managed: true
+
+buy_rules:
+  min_avg_trading_value_20d: 5000000000
+  momentum_lookback_days: 60
+  momentum_top_percentile: 0.20
+  price_above_ma_days: 20
+
+sell_rules:
+  exit_if_rank_out: true
+  exit_if_close_below_ma20: true
+  stop_loss_pct: -0.10
+  exit_if_suspended_or_managed: true
+
+backtest:
+  fee_rate_buy: 0.00015
+  fee_rate_sell: 0.00015
+  tax_rate_sell: 0.0018
+  slippage_rate: 0.001
+  liquidity_trade_value_limit_ratio: 0.10

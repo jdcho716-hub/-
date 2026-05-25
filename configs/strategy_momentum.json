@@ -1,0 +1,17 @@
+{
+  "strategy": {
+    "name": "trading_value_momentum",
+    "rebalance": "weekly_monday",
+    "max_positions": 10,
+    "min_cash_weight": 0.1,
+    "max_weight_per_stock": 0.1
+  },
+  "universe": {
+    "markets": ["KOSPI", "KOSDAQ"],
+    "exclude_etf": true,
+    "exclude_spac": true,
+    "exclude_preferred": true,
+    "exclude_suspended": true,
+    "exclude_managed": true
+  }
+}

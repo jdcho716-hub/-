@@ -1,0 +1,9 @@
+{
+  "execution": {
+    "broker": "kis",
+    "is_paper": true,
+    "enable_real_trading": false,
+    "order": {"default_order_type": "LIMIT", "default_time_in_force": "DAY"},
+    "safety": {"require_manual_enable_for_real": true, "block_real_if_env_false": true}
+  }
+}

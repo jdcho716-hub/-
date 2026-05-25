@@ -1,0 +1,16 @@
+{
+  "risk": {
+    "exclude": {
+      "suspended": true,
+      "managed": true,
+      "investment_warning": true,
+      "investment_caution": true,
+      "investment_risk": true,
+      "etf": true,
+      "spac": true,
+      "preferred": true
+    },
+    "liquidity": {"min_avg_trading_value_20d": 5000000000},
+    "portfolio": {"max_weight_per_stock": 0.1, "max_positions": 10, "min_cash_weight": 0.1}
+  }
+}
