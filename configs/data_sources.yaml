@@ -1,0 +1,16 @@
+data_sources:
+  krx:
+    enabled: true
+    save_raw_response: true
+    raw_response_dir: logs/raw_api_response/krx
+
+  dart:
+    enabled: true
+    save_raw_response: true
+    raw_response_dir: logs/raw_api_response/dart
+
+  kis:
+    enabled: true
+    is_paper: true
+    save_raw_response: true
+    raw_response_dir: logs/raw_api_response/kis
